@@ -18,7 +18,7 @@ function App() {
         />
         <Todo title='Land a $100k Job' paragraph='Apply to 100 jobs' />
       </div>
-      <Modal title='Are you sure you want to delete?' />
+      {/* <Modal title='Are you sure you want to delete?' /> */}
     </>
   );
 }
