@@ -8,7 +8,10 @@ function App() {
     <>
       <Title />
       <div>
-        <input type='text' name='' id='' />
+        <input
+          type='text'
+          onChange={event => console.log(event.target.value)}
+        />
         <button>Add todo</button>
       </div>
       <div className='todo__wrapper'>
@@ -16,7 +19,7 @@ function App() {
         <Todo title='Finish Interview Section' />
         <Todo title='Land a $100k Job' />
       </div>
-      {/* <Modal title='Are you sure you want to delete?' /> */}
+      <Modal title='Are you sure you want to delete?' />
     </>
   );
 }
