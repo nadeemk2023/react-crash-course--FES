@@ -4,6 +4,8 @@ import Title from './components/Title.jsx';
 import Modal from './components/Modal.jsx';
 
 function App() {
+  let isModalOpen = false;
+
   return (
     <>
       <Title />
@@ -19,7 +21,7 @@ function App() {
         <Todo title='Finish Interview Section' />
         <Todo title='Land a $100k Job' />
       </div>
-      <Modal title='Are you sure you want to delete?' />
+      {isModalOpen ? <Modal title='Confirm delete?' /> : null}
     </>
   );
 }
