@@ -11,9 +11,9 @@ function Counter() {
   //       <button onClick={() => setCount(count => (count = 0))}>Reset</button>
   //     </>
   //   );
-  // ***********************************************************
-  //
-  // CART EXAMPLE
+  // *************************************************************
+  //                       CART EXAMPLE
+  //   ***********************************************************
   //   const [cart, setCart] = useState({
   //     item: 'apple',
   //     quantity: 10,
@@ -45,6 +45,19 @@ function Counter() {
   //       <button onClick={addApple}>+</button>
   //     </>
   //   );
+  // *************************************************************
+  //                       ARRAY EXAMPLE
+  //   ***********************************************************
+  const [arr, setArr] = useState([]);
+
+  return (
+    // ["+", "-"] - add a plus everytime the plus button is clicked and a minus everytime the minus button is clicked
+
+    <>
+      <button>+</button>
+      <button>-</button>
+    </>
+  );
 }
 
 export default Counter;
