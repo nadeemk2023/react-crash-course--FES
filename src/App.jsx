@@ -9,7 +9,18 @@ function App() {
   const [showModal, setShowModal] = useState(false);
 
   function onTodoDelete() {
+    setShowModal(true);
     console.log('onTodoDelete()');
+  }
+
+  function onCancelDelete() {
+    setShowModal(false);
+    console.log('onCancelDelete()');
+  }
+
+  function onConfirmDelete() {
+    setShowModal(false);
+    console.log('onConfirmDelete()');
   }
 
   return (
@@ -27,7 +38,13 @@ function App() {
         <Todo title='Finish Interview Section' onTodoDelete={onTodoDelete} />
         <Todo title='Land a $100k Job' onTodoDelete={onTodoDelete} />
       </div>
-      {showModal && <Modal title='Confirm delete?' />}
+      {showModal && (
+        <Modal
+          title='Confirm delete?'
+          onConfirmDelete={onConfirmDelete}
+          onCancelDelete={onCancelDelete}
+        />
+      )}
     </>
   );
   // return <Counter />;
