@@ -3,12 +3,12 @@ import './App.css';
 import Todo from './components/Todo.jsx';
 import Title from './components/Title.jsx';
 import Modal from './components/Modal.jsx';
-import Counter from './components/Counter.jsx';
+// import Counter from './components/Counter.jsx';
 
 function App() {
   const [showModal, setShowModal] = useState(false);
 
-  return <Counter />;
+  // return <Counter />;
 
   return (
     <>
