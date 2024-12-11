@@ -8,7 +8,9 @@ import Modal from './components/Modal.jsx';
 function App() {
   const [showModal, setShowModal] = useState(false);
 
-  // return <Counter />;
+  function onTodoDelete() {
+    console.log('onTodoDelete()');
+  }
 
   return (
     <>
@@ -21,13 +23,14 @@ function App() {
         <button onClick={() => setShowModal(true)}>Add todo</button>
       </div>
       <div className='todo__wrapper'>
-        <Todo title='Finish Frontend Simplified' />
-        <Todo title='Finish Interview Section' />
-        <Todo title='Land a $100k Job' />
+        <Todo title='Finish Frontend Simplified' onTodoDelete={onTodoDelete} />
+        <Todo title='Finish Interview Section' onTodoDelete={onTodoDelete} />
+        <Todo title='Land a $100k Job' onTodoDelete={onTodoDelete} />
       </div>
       {showModal && <Modal title='Confirm delete?' />}
     </>
   );
+  // return <Counter />;
 }
 
 export default App;
