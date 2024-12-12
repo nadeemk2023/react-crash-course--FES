@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Todo from './components/Todo.jsx';
 import Title from './components/Title.jsx';
@@ -22,6 +22,10 @@ function App() {
     setShowModal(false);
     console.log('confirmModal()');
   }
+
+  useEffect(() => {
+    console.log('on mount');
+  }, []);
 
   return (
     <>
