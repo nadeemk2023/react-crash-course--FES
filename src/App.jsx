@@ -13,14 +13,14 @@ function App() {
     console.log('onTodoDelete()');
   }
 
-  function onCancelDelete() {
+  function cancelModal() {
     setShowModal(false);
-    console.log('onCancelDelete()');
+    console.log('cancelModal()');
   }
 
-  function onConfirmDelete() {
+  function confirmModal() {
     setShowModal(false);
-    console.log('onConfirmDelete()');
+    console.log('confirmModal()');
   }
 
   return (
@@ -41,8 +41,8 @@ function App() {
       {showModal && (
         <Modal
           title='Confirm delete?'
-          onConfirmDelete={onConfirmDelete}
-          onCancelDelete={onCancelDelete}
+          confirmModal={confirmModal}
+          cancelModal={cancelModal}
         />
       )}
     </>
