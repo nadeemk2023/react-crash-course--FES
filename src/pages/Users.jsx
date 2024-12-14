@@ -6,6 +6,7 @@ function Users() {
 
   useEffect(() => {
     //fetch(`https://api.instagram.com/${username}`)
+    // something similiar to this approach is how instagram fetches data about a user and displays it once on mounting
   }, []);
   return <h1>Users</h1>;
 }
