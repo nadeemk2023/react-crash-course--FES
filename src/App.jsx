@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
+import Nav from './components/Nav.jsx';
 
 // import { useState, useEffect } from 'react';
 // import Todo from './components/Todo.jsx';
@@ -13,11 +14,7 @@ import Contact from './pages/Contact.jsx';
 function App() {
   return (
     <Router>
-      <nav>
-        <Link to='/'>Home</Link>
-        <Link to='/about'>About</Link>
-        <Link to='/contact'>Contact</Link>
-      </nav>
+      <Nav />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/about' element={<About />} />
