@@ -8,13 +8,12 @@ function Home() {
       'https://jsonplaceholder.typicode.com/users'
     );
     setUsers(data);
-    console.log(users);
   }
 
   useEffect(() => {
     fetchUsers();
   }, []);
-  return <h1>Home</h1>;
+  return <h1>{users.length > 0 && users[0].name}</h1>;
 }
 
 export default Home;
