@@ -1,14 +1,29 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 function Users() {
   const { id } = useParams();
+  const [user, setUser] = useState({});
+  const { name, email, username } = user;
 
-  // useEffect(() => {
-  //fetch(`https://api.instagram.com/${username}`)
-  // something similiar to this approach is how instagram fetches data about a user and displays it once on mounting
-  // }, []);
-  return <h1>{id}</h1>;
+  const fetchUser = async () => {
+    const { data } = await axios.get(
+      `https://jsonplaceholder.typicode.com/users/${id}`
+    );
+    setUser(data);
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <h1>{name}</h1>
+      <p>{email}</p>
+      <p>{username}</p>
+    </div>
+  );
 }
 
 export default Users;
