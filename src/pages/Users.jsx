@@ -16,9 +16,9 @@ function Users() {
 
   useEffect(() => {
     fetchUser();
-  }, []);
+  }, [id]);
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', width: '100vw' }}>
       <h1>{name}</h1>
       <p>{email}</p>
       <p>{username}</p>
