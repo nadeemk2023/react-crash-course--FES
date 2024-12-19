@@ -27,13 +27,17 @@ function Home() {
     ));
   }
 
+  function renderSkeletonLoading() {
+    return <h1>Loading...</h1>;
+  }
+
   useEffect(() => {
     setTimeout(() => {
       fetchUsers();
     }, 500);
   }, []);
 
-  return <>{users.length ? renderUsers() : <h1>Loading...</h1>}</>;
+  return <>{users.length ? renderUsers() : renderSkeletonLoading()}</>;
 }
 
 export default Home;
