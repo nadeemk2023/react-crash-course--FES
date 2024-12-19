@@ -13,6 +13,19 @@ function Home() {
     setUsers(data);
   }
 
+  function renderUsers(user) {
+    return (
+      <Link to={`users/${user.id}`} key={user.id}>
+        <User
+          id={user.id}
+          name={user.name}
+          email={user.email}
+          username={user.username}
+        />
+      </Link>
+    );
+  }
+
   useEffect(() => {
     setTimeout(() => {
       fetchUsers();
@@ -22,16 +35,7 @@ function Home() {
   return (
     <>
       {users.length ? (
-        users.map(user => (
-          <Link to={`users/${user.id}`} key={user.id}>
-            <User
-              id={user.id}
-              name={user.name}
-              email={user.email}
-              username={user.username}
-            />
-          </Link>
-        ))
+        users.map(user => renderUsers(user))
       ) : (
         <h1>Loading...</h1>
       )}
