@@ -21,16 +21,20 @@ function Home() {
 
   return (
     <>
-      {users.map(user => (
-        <Link to={`users/${user.id}`} key={user.id}>
-          <User
-            id={user.id}
-            name={user.name}
-            email={user.email}
-            username={user.username}
-          />
-        </Link>
-      ))}
+      {users.length ? (
+        users.map(user => (
+          <Link to={`users/${user.id}`} key={user.id}>
+            <User
+              id={user.id}
+              name={user.name}
+              email={user.email}
+              username={user.username}
+            />
+          </Link>
+        ))
+      ) : (
+        <h1>Loading...</h1>
+      )}
     </>
   );
 }
