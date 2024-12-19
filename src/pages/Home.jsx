@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import User from '../components/User.jsx';
 import { Link } from 'react-router-dom';
+import { render } from 'react-dom';
 
 function Home() {
   const [users, setUsers] = useState([]);
@@ -13,8 +14,8 @@ function Home() {
     setUsers(data);
   }
 
-  function renderUsers(user) {
-    return (
+  function renderUsers() {
+    return users.map(user => (
       <Link to={`users/${user.id}`} key={user.id}>
         <User
           id={user.id}
@@ -23,7 +24,7 @@ function Home() {
           username={user.username}
         />
       </Link>
-    );
+    ));
   }
 
   useEffect(() => {
@@ -32,15 +33,7 @@ function Home() {
     }, 500);
   }, []);
 
-  return (
-    <>
-      {users.length ? (
-        users.map(user => renderUsers(user))
-      ) : (
-        <h1>Loading...</h1>
-      )}
-    </>
-  );
+  return <>{users.length ? renderUsers() : <h1>Loading...</h1>}</>;
 }
 
 export default Home;
